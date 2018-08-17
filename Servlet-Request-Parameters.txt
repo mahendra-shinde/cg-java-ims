@@ -1,0 +1,16 @@
+Request Parameters
+
+	Additional parameters passed to servlet.
+	Parameters are KEY/VALUE pairs.
+	name=value	And, both "name" and "value" are STRINGS!!
+
+GET parameters
+	Visible in URL
+	{URL}?{GET-PARAMETER}
+
+POST parameters
+	Not Visible in URL
+	Part of Request BODY 
+
+Servlet can receive parameter using method [For Both GET and POST]:
+	request.getParameter("name") 
