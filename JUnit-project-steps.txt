@@ -1,0 +1,12 @@
+1. Create new Java Project 
+	Provide name of project
+	click Next
+2. On "Java Settings" screen, 
+	FIRST TAB shows "Source Folder"
+	Click on Link "Create new source folder"
+	Enter new name "testsrc"
+3. On THIRD TAB "Libraries"
+	Click on "Add Library" button
+	Select "JUnit" (Fifth from top)
+	Press NEXT, from drop down, select "JUnit 4"
+	Click FINISH -> FINISH
