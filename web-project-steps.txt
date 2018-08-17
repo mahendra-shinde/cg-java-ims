@@ -23,4 +23,8 @@
 	Select URL Pattern /WelcomeServlet Click "Edit" button
 	Replace URL Pattern to "/home.html" press OK
 	Press Finish
-5. Right click inside Servlet class and "Run > Run on Server"
+
+5. Add following code inside "doGet"
+	response.getWriter().append("Hello World");
+		
+6. Right click inside Servlet class and "Run > Run on Server"
