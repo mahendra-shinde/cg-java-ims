@@ -1,0 +1,26 @@
+1. Add Tomcat to Workspace
+	In Server TAB, Click on "New Server Runtime"
+	Select "Apache" from the list
+	 After EXPAND "Apache", select "Tomcat 8.0"
+	 Click NEXT
+	Use "Browse" button to locate and select apache tomcat folder
+	Click Finish
+
+2. Set HTTP Port
+	Double click on "Apache Tomcat 8" in Servers TAB
+	Goto "Ports" and replace "8080" with "8081"
+	Save and Close the page
+
+3. New -> Dynamic Web Project
+	Name:	DemoApp1
+	Server Runtime:	Apache Tomcat 8.0
+	Servlet Version: 3.1
+	Press FINISH button
+4. New -> Search for "Servlet" -> Next
+	package : 	com.cg
+	classname:	WelcomeServlet
+	Click NEXT button
+	Select URL Pattern /WelcomeServlet Click "Edit" button
+	Replace URL Pattern to "/home.html" press OK
+	Press Finish
+5. Right click inside Servlet class and "Run > Run on Server"
