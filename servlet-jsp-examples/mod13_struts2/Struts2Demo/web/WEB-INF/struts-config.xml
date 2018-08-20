@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+  <!-- ========== Form Bean Definitions =================================== -->
+  <form-beans>
+    <form-bean name="selectLeagueForm"
+               type="sl314.view.SelectLeagueForm" />
+    <form-bean name="enterPlayerForm"
+               type="sl314.view.EnterPlayerForm" />
+    <form-bean name="selectDivForm"
+               type="sl314.view.SelectDivisionForm" />
+    <form-bean name="addLeagueForm"
+               type="sl314.view.AddLeagueForm" />
+  </form-beans>
+
+  <!-- ========== Action Mapping Definitions ============================== -->
+  <action-mappings>
+
+    <!-- Declare the Registration actions -->
+    <action path="/register/select_league"
+            type="sl314.controller.SelectLeagueAction"
+            name="selectLeagueForm" scope="request" validate="true"
+            input="/register/select_league.jsp" >
+      <forward name="success" path="/register/enter_player.jsp"/>
+      <forward name="error" path="/register/select_league.jsp"/>
+    </action>
+
+    <action path="/register/enter_player"
+            type="sl314.controller.EnterPlayerAction"
+            name="enterPlayerForm" scope="request" validate="true"
+            input="/register/enter_player.jsp" >
+      <forward name="success" path="/register/select_division.jsp"/>
+      <forward name="error" path="/register/enter_player.jsp"/>
+    </action>
+
+    <action path="/register/select_division"
+            type="sl314.controller.SelectDivisionAction"
+            name="selectDivForm" scope="request" validate="true"
+            input="/register/select_division.jsp" >
+      <forward name="success" path="/register/thank_you.jsp"/>
+      <forward name="error" path="/register/select_division.jsp"/>
+    </action>
+
+    <!-- Declare the /admin/add_league.do action -->
+    <action path="/admin/add_league"
+            type="sl314.controller.AddLeagueAction"
+            name="addLeagueForm" scope="request" validate="true"
+            input="/admin/add_league.jsp" >
+      <forward name="success" path="/admin/success.jsp"/>
+      <forward name="error" path="/admin/add_league.jsp"/>
+    </action>
+  </action-mappings>
+
+  <!-- ========== Message Resource Bundle ================================= -->
+  <message-resources parameter="com.myapp.struts.ApplicationResources" null="false" /> 
+
+</struts-config>
+

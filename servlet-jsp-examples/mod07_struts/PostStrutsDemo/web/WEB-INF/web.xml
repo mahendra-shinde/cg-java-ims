@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"><description>
+    This Web Application demonstrates a well-encapsulated Model for
+    the Soccer League webapp.
+</description><display-name>SL-314 WebApp Example</display-name><context-param><param-name>data-directory</param-name><param-value>/export/home/student/demos/mod07_struts/PostStrutsDemo/web/WEB-INF/data/</param-value></context-param><listener><listener-class>sl314.web.InitializeModelProperties</listener-class></listener><servlet><servlet-name>ListLeagues</servlet-name><servlet-class>sl314.view.ListLeaguesServlet</servlet-class></servlet><servlet><servlet-name>AddLeagueForm</servlet-name><servlet-class>sl314.view.AddLeagueFormServlet</servlet-class><init-param><param-name>seasons-list</param-name><param-value>Spring,Summer,Autumn,Winter</param-value></init-param></servlet><servlet><servlet-name>Success</servlet-name><servlet-class>sl314.view.SuccessServlet</servlet-class></servlet><servlet><servlet-name>RegisterForm</servlet-name><servlet-class>sl314.view.RegisterFormServlet</servlet-class><init-param><param-name>seasons-list</param-name><param-value>Spring,Summer,Autumn,Winter</param-value></init-param><init-param><param-name>divisions-list</param-name><param-value>Coed A,Coed B,Mens,Womens</param-value></init-param></servlet><servlet><servlet-name>ThankYou</servlet-name><servlet-class>sl314.view.ThankYouServlet</servlet-class></servlet>
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <init-param>
+            <param-name>detail</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping><servlet-name>ListLeagues</servlet-name><url-pattern>/list_leagues.view</url-pattern></servlet-mapping><servlet-mapping><servlet-name>AddLeagueForm</servlet-name><url-pattern>/admin/add_league.view</url-pattern></servlet-mapping><servlet-mapping><servlet-name>Success</servlet-name><url-pattern>/admin/success.view</url-pattern></servlet-mapping><servlet-mapping><servlet-name>RegisterForm</servlet-name><url-pattern>/register/form.view</url-pattern></servlet-mapping><servlet-mapping><servlet-name>ThankYou</servlet-name><url-pattern>/register/thank_you.view</url-pattern></servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <jsp-config>
+        <taglib>
+            <taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+            <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+            <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+            <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/struts-nested.tld</taglib-uri>
+            <taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/struts-tiles.tld</taglib-uri>
+            <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+</web-app>

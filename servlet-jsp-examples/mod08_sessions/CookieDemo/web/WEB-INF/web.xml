@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee                         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  <display-name>SL-314 WebApp Example</display-name>
+  <description>
+    This Web Application demonstrates session management which depends
+    upon Cookies.
+  </description>
+
+  <context-param>
+    <param-name>data-directory</param-name>
+    <param-value>/export/home/student/demos/mod08_sessions/CookieDemo/web/WEB-INF/data/</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>sl314.web.InitializeModelProperties</listener-class>
+  </listener>
+
+  <!-- Declare the Struts ActionServlet (Front Controller) -->
+  <servlet>
+    <servlet-name>FrontController</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <!-- Path of the struts configuration file -->
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <!-- Load the servlet on startup -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <!-- View servlet declarations -->
+  <servlet>
+    <servlet-name>ListLeagues</servlet-name>
+    <servlet-class>sl314.view.ListLeaguesServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>AddLeagueForm</servlet-name>
+    <servlet-class>sl314.view.AddLeagueFormServlet</servlet-class>
+    <init-param>
+      <param-name>seasons-list</param-name>
+      <param-value>Spring,Summer,Autumn,Winter</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Success</servlet-name>
+    <servlet-class>sl314.view.SuccessServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>SelectLeagueForm</servlet-name>
+    <servlet-class>sl314.view.SelectLeagueFormServlet</servlet-class>
+    <init-param>
+      <param-name>seasons-list</param-name>
+      <param-value>Spring,Summer,Autumn,Winter</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>EnterPlayerForm</servlet-name>
+    <servlet-class>sl314.view.EnterPlayerFormServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>SelectDivisionForm</servlet-name>
+    <servlet-class>sl314.view.SelectDivisionFormServlet</servlet-class>
+    <init-param>
+      <param-name>divisions-list</param-name>
+      <param-value>Coed A,Coed B,Mens,Womens</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ThankYou</servlet-name>
+    <servlet-class>sl314.view.ThankYouServlet</servlet-class>
+  </servlet>
+
+
+  <!-- Standard Front Controller Mapping -->
+  <servlet-mapping>
+    <servlet-name>FrontController</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+  <!-- View servlet mappings -->
+  <servlet-mapping>
+    <servlet-name>ListLeagues</servlet-name>
+    <url-pattern>/list_leagues.view</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>AddLeagueForm</servlet-name>
+    <url-pattern>/admin/add_league.view</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Success</servlet-name>
+    <url-pattern>/admin/success.view</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SelectLeagueForm</servlet-name>
+    <url-pattern>/register/select_league.view</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EnterPlayerForm</servlet-name>
+    <url-pattern>/register/enter_player.view</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SelectDivisionForm</servlet-name>
+    <url-pattern>/register/select_division.view</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ThankYou</servlet-name>
+    <url-pattern>/register/thank_you.view</url-pattern>
+  </servlet-mapping>
+
+  <session-config>
+    <session-timeout>10</session-timeout>
+  </session-config>
+
+</web-app>

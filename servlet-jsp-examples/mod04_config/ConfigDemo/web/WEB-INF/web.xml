@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee                         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  <display-name>SL-314 WebApp Example</display-name>
+  <description>
+    This Web Application demonstrates the configuration of a servlet.
+  </description>
+
+  <servlet>
+    <servlet-name>ListLeagues</servlet-name>
+    <servlet-class>sl314.view.ListLeaguesServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>AddLeagueForm</servlet-name>
+    <servlet-class>sl314.view.AddLeagueFormServlet</servlet-class>
+    <init-param>
+      <param-name>seasons-list</param-name>
+      <param-value>Spring,Summer,Autumn,Winter</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>AddLeague</servlet-name>
+    <servlet-class>sl314.controller.AddLeagueServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Success</servlet-name>
+    <servlet-class>sl314.view.SuccessServlet</servlet-class>
+  </servlet>
+
+  
+
+
+  <servlet-mapping>
+    <servlet-name>ListLeagues</servlet-name>
+    <url-pattern>/list_leagues.view</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>AddLeagueForm</servlet-name>
+    <url-pattern>/admin/add_league.view</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>AddLeague</servlet-name>
+    <url-pattern>/admin/add_league.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Success</servlet-name>
+    <url-pattern>/admin/success.view</url-pattern>
+  </servlet-mapping>
+
+  
+
+
+</web-app>

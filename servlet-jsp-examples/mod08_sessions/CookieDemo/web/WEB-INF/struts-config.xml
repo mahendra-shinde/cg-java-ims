@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+  <action-mappings>
+
+    <!-- Declare the Registration actions -->
+    <action path="/register/select_league"
+            type="sl314.controller.SelectLeagueAction">
+      <forward name="success" path="/register/enter_player.view"/>
+      <forward name="error" path="/register/select_league.view"/>
+    </action>
+
+    <action path="/register/enter_player"
+            type="sl314.controller.EnterPlayerAction">
+      <forward name="success" path="/register/select_division.view"/>
+      <forward name="error" path="/register/enter_player.view"/>
+    </action>
+
+    <action path="/register/select_division"
+            type="sl314.controller.SelectDivisionAction">
+      <forward name="success" path="/register/thank_you.view"/>
+      <forward name="error" path="/register/select_division.view"/>
+    </action>
+
+    <!-- Declare the /admin/add_league.do action -->
+    <action path="/admin/add_league"
+            type="sl314.controller.AddLeagueAction">
+      <forward name="success" path="/admin/success.view"/>
+      <forward name="error" path="/admin/add_league.view"/>
+    </action>
+
+  </action-mappings>
+
+</struts-config>
+
