@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Insert title here</title>
+</head>
+<body>
+<f:view >
+<h:form id="frm1" >
+	<h:panelGrid columns="2" >
+	<h:outputLabel value="Enter Date of Birth:" />
+	<h:inputText id="inp1" value="#{calcBean.dob}">
+		<f:convertDateTime pattern="dd/mm/yyyy"/>
+	</h:inputText> 
+	<h:outputLabel value="Your appointment with YAMA scheduled on : " />
+	<h:outputText id="out1" value="#{calcBean.exp}">
+		<f:convertDateTime dateStyle="medium" />
+	</h:outputText>
+	<h:commandButton id="btn1" value="Calculate" actionListener="#{calcBean.calc}"/>
+	</h:panelGrid>
+</h:form>
+</f:view> 
+</body>
+</html>

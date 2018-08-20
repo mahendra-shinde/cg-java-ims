@@ -1,0 +1,25 @@
+1. Download MyFaces from myfaces.apache.org
+2. Download jstl-1.2.jar from mvnrepository.com
+3. Create new Dynamic Web Project in eclipse
+	3.1 Click on "Modify" button to change project facet
+	3.2 "Check" Java Server Faces / JSF version 2.0
+	3.3 Press OK->Next
+	3.4 In JSF Implementation library select:
+		"Disable User library configuration"
+		Change URL Pattern from "/faces/*" to "*.jsf"
+	3.5 Click FINISH
+4. Copy All EIGHT Jar files from myfaces/lib to WEB-INF/lib
+5. Copy JSTL-1.2.jar to WEB-INF/lib
+6. Edit "WEB-INF/web.xml" file
+	Write following code:
+	<context-param>
+    		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+    		<param-value>server</param-value>
+	</context-param>
+7. Create new Java Class "CalcBean"
+8. Create new HTML file
+	8.1 New -> HTML file -> name: calc.xhtml
+	8.2 Select "JSF Xhtml page" template
+	8.3 Finish
+9. Write UI code inside calc.xhtml
+	
