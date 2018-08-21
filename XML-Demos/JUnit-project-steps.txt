@@ -1,0 +1,23 @@
+Create XML Schema for :
+
+List of 1 to 100 person
+Each person could be either Employee or Supplier or Customer
+
+each Employee should contain attributes:
+	empId 
+	name 
+	dob
+	doj
+	designation
+
+each Supplier (attributes)
+	supplierId
+	name
+	dob
+	phone
+
+each Customer (attributes)
+	customerId
+	name
+	dob
+	phone
