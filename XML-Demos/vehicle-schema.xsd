@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+<xs:element name="vehicle-list">
+  <xs:complexType>
+  	<xs:sequence>
+  		<xs:element name="vehicle" type="vehicleType" minOccurs="1" maxOccurs="100"  />
+  	</xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+
+<xs:complexType name="vehicleType">
+	<xs:sequence>
+		<xs:element name="type">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Sedan" />
+					<xs:enumeration value="HatchBack" />
+					<xs:enumeration value="MUV" />
+					<xs:enumeration value="SUV" />
+					<xs:enumeration value="Truck" />
+					<xs:enumeration value="Bus" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+		<xs:element name="reg-no">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[A-Z]{2}-[A-Z0-9]{2}-[0-9]{4}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+	</xs:sequence>
+</xs:complexType>
+</xs:schema>

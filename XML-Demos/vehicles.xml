@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vehicle-list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vehicle-schema.xsd">
+  <vehicle>
+    <type>Sedan</type>
+    <reg-no>KA-12-2908</reg-no>
+  </vehicle>
+<vehicle>
+    <type>SUV</type>
+    <reg-no>MH-12-2167</reg-no>
+  </vehicle>
+</vehicle-list>

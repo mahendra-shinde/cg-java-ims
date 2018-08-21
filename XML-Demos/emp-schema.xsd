@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/emp-schema" xmlns:tns="http://www.example.org/emp-schema" elementFormDefault="qualified">
+<element name="EMP-DATA" type="tns:empDataType" />
+<complexType name="empDataType">
+	<sequence>
+		<element name="emp" type="tns:empType" minOccurs="1" maxOccurs="100" />
+	</sequence>
+</complexType>
+
+<complexType name="empType">
+	<attribute name="name" type="string" />
+	<attribute name="job" type="string" />
+	<attribute name="age" type="int"/>
+	<attribute name="joining" type="date"/>
+</complexType>
+</schema>
