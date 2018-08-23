@@ -3,11 +3,36 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+	.redBorder{
+		border: 2px solid red;
+		background-color:yellow;
+		padding: 5px;
+	}
+	.blueBorder{
+		border: 2px solid blue;
+		background-color:lightblue;
+		padding: 5px;
+	}
+</style>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript" src="form.js"></script>
+<script type="text/javascript">
+$(function(){ //ensure that function() is called only after page is loaded!
+	$(":input:odd").addClass("redBorder");
+	$(":input:even").addClass("blueBorder");
+});
+
+//Same as Above function declaration
+$(document).ready(function(){		
+});
+
+</script>
 </head>
 <body>
 <h2>User registration</h2>
 
-<form name="reg" >
+<form name="reg" onreset="return confirmReset()" onsubmit="return confirmSubmit(this)" >
 Enter name : <input type="text" name="fname" /><input type="text" name="lname" /><br/>
 Age : <input type="number" name="age"/><br/>
 EMail : <input type="email" name="email"/><br/>
@@ -20,8 +45,8 @@ Hobbies: <select name="hb">
 		<option value="4">Pranks on friends</option>
 		<option value="5">Watching TV</option>
 	</select>
-<input type="reset" value="Reset"/>
-<input type="submit" value="Sumbit"/>
+<input type="reset" value="Reset" />
+<input id="btn1" type="submit" value="Submit"/>
 </form>
 
 </body>
