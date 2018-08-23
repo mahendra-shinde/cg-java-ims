@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js">
+</script>
+
+<script type="text/javascript">
+$(function() {
+	$("input[type='button']").mouseover(function(){
+		var id = $(this).attr('id');
+		console.log(id);
+		if(id =='btn1'){
+			$("#btn1").val('Yes');
+			$("#btn2").val('No');
+		}else {
+			$("#btn1").val('No');
+			$("#btn2").val('Yes');
+		}
+	});
+});
+</script>
+</head>
+<body>
+<h2>Are you dumb than rest of class?</h2>
+<input type="button" id="btn1" value="Yes"/>
+<input type="button" id="btn2" value="No"/>
+</body>
+</html>
