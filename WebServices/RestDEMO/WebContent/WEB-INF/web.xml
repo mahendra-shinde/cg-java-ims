@@ -13,8 +13,8 @@
     <description>JAX-RS Tools Generated - Do not modify</description>
     <servlet-name>javax.ws.rs.core.Application</servlet-name>
     <init-param>
-    	<param-name>jersey.config.server.provider.packages</param-name>
-    	<param-value>com.mahendra</param-value>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>com.mahendra</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
