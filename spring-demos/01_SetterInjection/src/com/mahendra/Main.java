@@ -17,7 +17,6 @@ public class Main {
 		double rupees = converter.dollarToRupees(20);
 		System.out.println("Amount in rupees : "+rupees);
 		
-		
 	}
 
 }
