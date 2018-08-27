@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<!-- Requesting Spring IoC to perform Constructor Injection automatically
+		 Example of Convention over configuration:
+		 	Spring IoC will search for Bean who's type matches with Constructor argument!!
+	 -->
+	<bean id="converter" class="com.mahendra.CurrencyConverterImpl" autowire="constructor">
+	</bean>
+	
+	<bean id="propertyPlaceholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="exrates.properties"/>
+	</bean>
+	
+	<bean id="exchangeService" class="com.mahendra.ExchangeServiceImpl">
+		<property name="exchangeRates">
+			<map>
+				<entry key="INR" value="${INR}"/>
+				<entry key="PKR" value="${PKR}"/>
+				<entry key="JY" value="${JY}"/>
+				<entry key="SGD" value="${SGD}"/>
+			</map>
+		</property>
+	</bean>
+	
+</beans>
